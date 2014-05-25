@@ -3,7 +3,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <DPTransitions/BasicAnimator.h>
+#import "BasicAnimator.h"
 
 @interface BasicAnimator (UIViewController)
 
