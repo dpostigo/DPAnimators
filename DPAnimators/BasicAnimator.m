@@ -8,6 +8,8 @@
 
 @synthesize transitionDuration;
 @synthesize isPresenting;
+@synthesize isInteractive;
+@synthesize releasesAnimator;
 
 - (void) animateWithContext: (id <UIViewControllerContextTransitioning>) transitionContext {
     [transitionContext completeTransition: YES];
@@ -22,6 +24,11 @@
 - (void) dismissWithContext: (id <UIViewControllerContextTransitioning>) context {
 
 }
+
+- (void) animationEnded: (BOOL) transitionCompleted {
+
+}
+
 
 
 #pragma mark Helpers
@@ -44,16 +51,5 @@
     [self animateWithContext: transitionContext];
 }
 
-#pragma mark UIViewControllerTransitioningDelegate
-
-- (id <UIViewControllerAnimatedTransitioning>) animationControllerForPresentedController: (UIViewController *) presented presentingController: (UIViewController *) presenting sourceController: (UIViewController *) source {
-    self.isPresenting = YES;
-    return self;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>) animationControllerForDismissedController: (UIViewController *) dismissed {
-    self.isPresenting = NO;
-    return self;
-}
 
 @end

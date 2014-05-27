@@ -3,9 +3,25 @@
 //
 
 #import "BasicAnimator+Utils.h"
-
+#import "NSObject+InterfaceUtils.h"
 
 @implementation BasicAnimator (Utils)
+
+- (NSString *) toOrientationAsString: (id <UIViewControllerContextTransitioning>) context {
+    return [self stringForInterfaceOrientation: [self toOrientation: context]];
+}
+
+- (NSString *) fromOrientationAsString: (id <UIViewControllerContextTransitioning>) context {
+    return [self stringForInterfaceOrientation: [self fromOrientation: context]];
+}
+
+- (UIInterfaceOrientation) toOrientation: (id <UIViewControllerContextTransitioning>) context {
+    return [self toViewController: context].interfaceOrientation;
+}
+
+- (UIInterfaceOrientation) fromOrientation: (id <UIViewControllerContextTransitioning>) context {
+    return [self fromViewController: context].interfaceOrientation;
+}
 
 - (CGRect) rectForDismissedState: (id) transitionContext size: (CGSize) size {
     UIViewController *fromViewController;
