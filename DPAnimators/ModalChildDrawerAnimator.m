@@ -17,10 +17,11 @@
     [super presentWithContext: context];
 
     UIView *containerView = context.containerView;
-    UIView *toView = [self toViewController: context].view;
+    UIViewController *toController = [self toViewController: context];
     UIViewController *fromController = [self fromViewController: context];
+    UIView *toView = toController.view;
 
-    UIViewController *containerController = [self containerControllerForContext: context];
+    UIViewController *containerController = [[UIViewController alloc] init];
 
     [containerView addSubview: fromController.view];
     [containerView addSubview: containerController.view];
