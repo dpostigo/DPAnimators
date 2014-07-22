@@ -4,12 +4,15 @@
 
 #import "BasicNavigationAnimator.h"
 
+
 @implementation BasicNavigationAnimator
 
 - (void) animateWithContext: (id <UIViewControllerContextTransitioning>) transitionContext {
     if (self.isPresenting) {
         [self presentWithContext: transitionContext];
     } else {
+
+
         [self dismissWithContext: transitionContext];
     }
 }

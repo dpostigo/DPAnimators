@@ -46,7 +46,6 @@
     //    containerView.opaque = NO;
     //    [containerView addSubview: sourceView];
     //    [containerView addSubview: destinationView];
-    //    [containerView addDebugBorder: [UIColor redColor]];
     //
     //    destinationView.backgroundColor = [UIColor blueColor];
     //

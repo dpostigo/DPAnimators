@@ -5,9 +5,9 @@
 #import <Foundation/Foundation.h>
 #import "BasicModalAnimator.h"
 
-
 @interface SlidingModalAnimator : BasicModalAnimator {
     CGSize modalPresentationSize;
 }
+
 @property(nonatomic) CGSize modalPresentationSize;
 @end
